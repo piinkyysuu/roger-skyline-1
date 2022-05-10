@@ -1,26 +1,43 @@
-#### SET UP 
-- Choose 7.45GB
-- 4.2 GB partition
-- 500 MB swap
-- In network tab in virtual box, change from NAT to bridged.
+#### **SET UP**
+Choose 7.45GB
 
-* Neccessary installs
-	- update package:	apt-get update && apt-get upgrade
-	- install sudo:	apt-get install sudo
-	- install vim: (if not enough memory, uninstall this)	apt-get install vim
-	- install parted: (if not enough memory, uninstall this)	apt-get install parted
+4.2 GB partition
 
-* Commonly used command-line
-	- reboot:
-		reboot
-	- check memory
-		parted -> unit GB -> print all
-	- find IP hostname
-		hostname -I
-		ip addr
-	- find default gateway
-		ip route show
+500 MB swap
 
+In network tab in virtual box, change from NAT to bridged.
+
+---
+
+#### **NECCESSARY INSTALLS**
+update package:
+     `apt-get update && apt-get upgrade`
+
+install sudo:
+     `apt-get install sudo`
+
+install vim: (if not enough memory, uninstall this)	
+     `apt-get install vim`
+
+install parted: (if not enough memory, uninstall this)
+     `apt-get install parted`
+
+---
+
+#### **COMMONLY USED COMMAND LINE**
+reboot:
+     `reboot`
+
+check memory
+     `parted` -> `unit GB` -> `print all`
+
+find IP hostname
+     `hostname -I` or `ip addr`
+
+find default gateway
+     `ip route show`
+
+---
 
 * You must create a non-root user to connect to the machine and work.
 * Use sudo, with this user, to be able to perform operation requiring special rights
