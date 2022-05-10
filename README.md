@@ -1,14 +1,12 @@
-SET UP 
+###SET UP 
 - Choose 7.45GB
 - 4.2 GB partition
 - 500 MB swap
 - In network tab in virtual box, change from NAT to bridged.
 
-Neccessary installs
+###Neccessary installs
 	- update package:
-		```
-			apt-get update && apt-get upgrade
-		```
+		```apt-get update && apt-get upgrade```
 	- install sudo:
 		```apt-get install sudo```
 	- install vim: (if not enough memory, uninstall this)
@@ -16,7 +14,7 @@ Neccessary installs
 	- install parted: (if not enough memory, uninstall this)
 		```apt-get install parted```
 
-Commonly used command-line
+###Commonly used command-line
 	- reboot:
 		```reboot```
 	- check memory
