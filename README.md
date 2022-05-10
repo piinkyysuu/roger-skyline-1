@@ -1,4 +1,4 @@
-###SET UP 
+### SET UP 
 - Choose 7.45GB
 - 4.2 GB partition
 - 500 MB swap
