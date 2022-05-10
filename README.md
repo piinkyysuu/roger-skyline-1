@@ -6,7 +6,7 @@ SET UP
 
 Neccessary installs
 	- update package:
-		```apt-get update && apt-get upgrade```
+```apt-get update && apt-get upgrade```
 	- install sudo:
 		```apt-get install sudo```
 	- install vim: (if not enough memory, uninstall this)
