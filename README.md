@@ -1,4 +1,4 @@
-**** SET UP ****
+## SET UP 
 - Choose 7.45GB
 - 4.2 GB partition
 - 500 MB swap
@@ -6,7 +6,7 @@
 
 * Neccessary installs
 	- update package:
-		apt-get update && apt-get upgrade
+		```apt-get update && apt-get upgrade```
 	- install sudo:
 		apt-get install sudo
 	- install vim: (if not enough memory, uninstall this)
