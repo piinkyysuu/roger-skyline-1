@@ -10,31 +10,31 @@ In network tab in virtual box, change from NAT to bridged.
 ---
 
 #### **NECCESSARY INSTALLS**
-update package: <br>
+update package <br>
      `apt-get update && apt-get upgrade`
 
-install sudo:
+install sudo <br>
      `apt-get install sudo`
 
-install vim: (if not enough memory, uninstall this)	
+install vim (if not enough memory, uninstall this)	<br>
      `apt-get install vim`
 
-install parted: (if not enough memory, uninstall this)
+install parted (if not enough memory, uninstall this) <br>
      `apt-get install parted`
 
 ---
 
 #### **COMMONLY USED COMMAND LINE**
-reboot:
+reboot: <br>
      `reboot`
 
-check memory
+check memory <br>
      `parted` -> `unit GB` -> `print all`
 
-find IP hostname
+find IP hostname <br>
      `hostname -I` or `ip addr`
 
-find default gateway
+find default gateway<br>
      `ip route show`
 
 ---
