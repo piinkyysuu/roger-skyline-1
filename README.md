@@ -10,7 +10,7 @@ In network tab in virtual box, change from NAT to bridged.
 ---
 
 #### **NECCESSARY INSTALLS**
-update package:
+update package: <br>
      `apt-get update && apt-get upgrade`
 
 install sudo:
