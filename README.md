@@ -5,7 +5,7 @@
 - In network tab in virtual box, change from NAT to bridged.
 
 #### Neccessary installs
-	- update package:	apt-get update && apt-get upgrade
+	##### update package:	apt-get update && apt-get upgrade
 	- install sudo:	apt-get install sudo
 	- install vim: (if not enough memory, uninstall this)	apt-get install vim
 	- install parted: (if not enough memory, uninstall this)	apt-get install parted
