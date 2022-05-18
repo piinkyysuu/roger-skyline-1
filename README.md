@@ -89,5 +89,62 @@ find default gateway<br>
 			sudo ufw delete [RULE_NUMBER]
 	- for SSH service:
 		+ allow the specific ports
-			sudo ufw allow [PORT_NUMBER]
-		
+			sudo ufw allow [PORT_NUMBER]/[NET_ID]
+		+ to check [NET_ID]
+			sudo ss -tunlp
+	- to prevent too many attempt to connect to ssh service. ufw will deny IP that try to connect 6 or more times within 30 seconds.
+		sudo ufw limit [PORT_NUMBER]/[NET_ID]
+	- prevent the most common port
+		sudo ufw deny 22/tcp
+
+* You have to set a DOS (Denial Of Service Attack) protection on your open ports of your VM.
+	- install fail2ban:
+		sudo apt-get install fail2ban
+	- check status
+		check status of a jail (for e.g sshd)
+			sudo fail2ban-client status sshd
+		check banned ip
+			sudo fail2ban-client banned
+	- check log of ban:
+		/var/log/fail2ban.log
+	- configure for fail2ban (ssh)
+		create a file sshd.local in /etc/fail2ban/jail.d/
+		edit the file as e.g below:
+			[sshd]
+			enabled = true
+			filter = sshd
+			port = 2608
+			logpath = %(sshd_log)s
+			maxretry = 3
+			bantime = 600
+	- unban ip
+		sudo fail2ban-client set sshd unbanip 192.168.1.126
+
+* You have to set a protection against scans on your VM’s open ports.
+	useful links:
+		https://akhil.io/blog/custom-fail2ban-filters
+		https://serverfault.com/questions/629709/trouble-with-fail2ban-ufw-portscan-filter
+		https://phoenixnap.com/kb/nmap-scan-open-ports
+	to scan ports:
+		sudo nmap -PN [IP_ADDRESS]
+	add custom rule in fail2ban
+		to check if regex is correct:
+			 sudo fail2ban-regex  /var/log/ufw.log '.*\[UFW BLOCK\] .* SRC=<HOST> .* PROTO=TCP ' --print-all-matched
+		in filter.d:
+			create a custom rule file ([filename].conf) this is to find a matching pattern in a file that will be later declared in rule.
+				[Definition]
+				failregex = .*\[UFW BLOCK\] .* SRC=<HOST> .* PROTO=TCP
+		in local.d:
+			create a custom rule file ([filename].local) and set rules for this filter
+				[myportban]
+				enabled = true
+				filter = myportban
+				logpath = /var/log/ufw.log
+				maxretry = 3
+				findtime = 20
+				bantime = 120
+
+* Stop the services you don’t need for this project.
+	THIS SHOULD BE CHECKED AT SCHOOL!
+
+* Create a script that updates all the sources of package, then your packages and which logs the whole in a file named /var log/update_script.log. Create a scheduled task for this script once a week at 4AM and every time the machine reboots.
