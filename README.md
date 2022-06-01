@@ -147,4 +147,4 @@ find default gateway<br>
 * Stop the services you don’t need for this project.
 	THIS SHOULD BE CHECKED AT SCHOOL!
 
-* Create a script that updates all the sources of package, then your packages and which logs the whole in a file named /var log/update_script.log. Create a scheduled task for this script once a week at 4AM and every time the machine reboots.
+* Create a script that updates all the sources of package, then your packages and which logs the whole in a file named /var log/update_script.log. Create a scheduled task for this script once a week at 4AM and every time the machine reboots. 
